@@ -20,7 +20,7 @@ yarn-error.log*
 # Dependency directories
 node_modules/
 jspm_packages/
-
+dist 
 # Distribution directories 
 dist/ 
 

@@ -20,7 +20,6 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
     ],
-    resolve: {extensions: ['.js','.jsx']},
   },
   plugins: [
     new HtmlWebpackPlugin({
