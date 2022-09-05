@@ -21,8 +21,12 @@ yarn-error.log*
 node_modules/
 jspm_packages/
 dist 
+
 # Distribution directories 
 dist/ 
+
+# npm 
+package-lock.json
 
 #Optional npm cache directory 
 .npm 
