@@ -43,3 +43,31 @@ package-lock.json
 # Yarn Integrity file 
 .yarn-integrity
 
+# ignore vim swap files 
+.*.swp 
+
+# ignore files generatedIDES
+/.aswb/
+/.cache/
+/.classpath/
+/.clwb/
+/.factorypath/
+/.idea/
+/.ijwb/
+/.project 
+/.settings 
+/.vscode/ 
+/bazel.iml 
+
+#bazel   
+/bazel-* 
+# Ignore outputs generated during bazel bootstrapping 
+/output/ 
+# jekyll build output 
+
+/production
+/.sass-cache 
+# bazelisk version file 
+.bazelversion 
+# user specific .bazelrc 
+user.bazelrc  
