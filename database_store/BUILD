@@ -7,6 +7,7 @@ cc_binary(
 	  ":database_access_object",
 	  "@com_github_gflags_gflags//:gflags",
 	  "@com_google_absl//absl/status",
+	  "@com_google_glog//:glog",
 	],
 )
 
@@ -15,11 +16,12 @@ cc_library(
 	srcs = ["database_access_object.cpp"],
 	hdrs = ["database_access_object.h"],
 	deps = [
-	  "//protos:database_config_proto",
-	  "@libmysqlclient",
+	  "//protos:database_config_cc_proto",
 	  "@com_google_absl//absl/strings",
 	  "@com_google_absl//absl/status",
 	  "@com_github_gflags_gflags//:gflags",
+	  "@com_google_glog//:glog",
+
 	],
 	includes = [
 	  "usr/includes/mysql/*.h"

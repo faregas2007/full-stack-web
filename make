@@ -12,6 +12,9 @@ apt-get install libssl-dev libresolv-wrapper libpthreadpool-dev  -y
 wdr=$PWD 
 bazel build //protos:database_config_cc_proto 
 cp -f wdr/database_config.pb.* wdr/protos/
+bazel build //datastore:database_access_object_test
 
+# test 
+bazel run //datastore:database_access_object_test 
 # user granting permission to mysql server.
 # mysql -u "username" -p "password" 

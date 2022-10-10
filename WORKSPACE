@@ -32,6 +32,16 @@ http_archive(
     ],
 )
 
+http_archive(
+    name = "com_google_glog",
+    strip_prefix = "glog-96a2f23dca4cc7180821ca5f32e526314395d26a",
+    urls = [
+      "https://github.com/google/glog/archive/96a2f23dca4cc7180821ca5f32e526314395d26a.zip",
+    ],
+    sha256 = "6281aa4eeecb9e932d7091f99872e7b26fa6aacece49c15ce5b14af2b7ec050f",
+)
+
+
 # gRPC. Official release 1.33.2. Name is required by Google APIs.
 http_archive(
     name = "com_github_grpc_grpc",
