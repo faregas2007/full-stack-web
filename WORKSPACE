@@ -1,6 +1,21 @@
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
+PROTOBUF_COMMIT = "fde7cf7358ec7cd69e8db9be4f1fa6a5c431386a" # 3.13.0
+http_archive(
+    name = "com_google_protobuf",
+    sha256 = "e589e39ef46fb2b3b476b3ca355bd324e5984cbdfac19f0e1625f0042e99c276",
+    strip_prefix = "protobuf-%s" % PROTOBUF_COMMIT,
+    urls = [
+        "https://storage.googleapis.com/grpc-bazel-mirror/github.com/google/protobuf/archive/%s.tar.gz" % PROTOBUF_COMMIT,
+        "https://github.com/google/protobuf/archive/%s.tar.gz" % PROTOBUF_COMMIT,
+    ],
+)
+
+load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
+
+protobuf_deps()
+
 http_archive(
     name = "rules_cc",
     urls = ["https://github.com/bazelbuild/rules_cc/releases/download/0.0.4/rules_cc-0.0.4.tar.gz"],
@@ -17,27 +32,12 @@ http_archive(
     ],
 )
 
-PROTOBUF_COMMIT = "fde7cf7358ec7cd69e8db9be4f1fa6a5c431386a" # 3.13.0
-http_archive(
-    name = "com_google_protobuf",
-    sha256 = "e589e39ef46fb2b3b476b3ca355bd324e5984cbdfac19f0e1625f0042e99c276",
-    strip_prefix = "protobuf-%s" % PROTOBUF_COMMIT,
-    urls = [
-        "https://storage.googleapis.com/grpc-bazel-mirror/github.com/google/protobuf/archive/%s.tar.gz" % PROTOBUF_COMMIT,
-        "https://github.com/google/protobuf/archive/%s.tar.gz" % PROTOBUF_COMMIT,
-    ],
-)
-
-load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
-
-protobuf_deps()
-
 # gRPC. Official release 1.33.2. Name is required by Google APIs.
 http_archive(
     name = "com_github_grpc_grpc",
     sha256 = "2060769f2d4b0d3535ba594b2ab614d7f68a492f786ab94b4318788d45e3278a",
     strip_prefix = "grpc-1.33.2",
-    patches = ["//ml_metadata/third_party:grpc.patch"],
+    patches = ["//third_party:grpc.patch"],
     urls = ["https://github.com/grpc/grpc/archive/v1.33.2.tar.gz"],
 )
 load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")

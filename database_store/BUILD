@@ -21,4 +21,15 @@ cc_library(
 	  "@com_google_absl//absl/status",
 	  "@com_github_gflags_gflags//:gflags",
 	],
+	includes = [
+	  "usr/includes/mysql/*.h"
+	],
+	linkopts = [
+	  "-lmysqlclient",
+	  "-lzstd",
+	  "-lssl",
+	  "-lcrypto",
+	  "-lresolv",
+	  "-lm",
+	],
 )

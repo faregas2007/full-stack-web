@@ -1,0 +1,16 @@
+Usage: /usr/bin/mysql_config [OPTIONS]
+Compiler: GNU 11.2.0
+Options:
+        --cflags         [-I/usr/include/mysql ]
+        --cxxflags       [-I/usr/include/mysql ]
+        --include        [-I/usr/include/mysql]
+        --libs           [-L/usr/lib/x86_64-linux-gnu -lmysqlclient -lzstd -lssl -lcrypto -lresolv -lm]
+        --libs_r         [-L/usr/lib/x86_64-linux-gnu -lmysqlclient -lzstd -lssl -lcrypto -lresolv -lm]
+        --plugindir      [/usr/lib/mysql/plugin]
+        --socket         [/var/run/mysqld/mysqld.sock]
+        --port           [0]
+        --version        [8.0.30]
+        --variable=VAR   VAR is one of:
+                pkgincludedir [/usr/include/mysql]
+                pkglibdir     [/usr/lib/x86_64-linux-gnu]
+                plugindir     [/usr/lib/mysql/plugin]
